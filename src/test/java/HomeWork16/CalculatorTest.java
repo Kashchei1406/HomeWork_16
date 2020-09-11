@@ -21,8 +21,16 @@ public class CalculatorTest {
         long intNotNull = calculator.addition(intBefore, b);
 
         //THEN
-        assertEquals(a + b, intAfter);
+        assertEquals(8, intAfter);
         assertNotSame(intBefore, intNotNull);
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testAddition_negativeFlow() {
+
+        // WHEN
+        long intAfter = calculator.addition(null, b);
 
     }
 
